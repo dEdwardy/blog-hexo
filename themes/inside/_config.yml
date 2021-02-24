@@ -16,7 +16,7 @@ appearance:
   # Sidebar background (when opened), default to accent_color
   sidebar_background:
   # Card background, default '#fff'
-  card_background: '#fff'
+  card_background:
 
   # All background settings above support image, e.g.,
   # '//www.toptal.com/designers/subtlepatterns/patterns/confectionary.png #f5f7fa' or
@@ -37,7 +37,7 @@ appearance:
     # Sidebar author font, fallback to `base`
     logo:
     # Sidebar menu font, fallback to `base`
-    menu: 'Baloo Bhaijaan'
+    menu: "Baloo Bhaijaan"
     # Font for:
     # - percentage on the fab button
     # - month text on archives page
@@ -99,10 +99,10 @@ profile:
 # Sidebar navigation links
 menu:
   主页: /
-  分类: /categories
   搜索: /search
-  关于: /about
-  Github: https://github.com/dedwardy
+  # 分类: /categories
+  # 关于: /about
+  # Github: https://github.com/dedwardy
 
 # Social media URL
 sns:
@@ -115,7 +115,9 @@ sns:
   - icon: feed
     title: Feed
     url: # default to `hexo.config.feed.path`
-
+  - icon: github
+    title: github
+    url: https://github.com/dedwardy
   # custom icon
   # - title: Email me
   #   url: # default to `profile.email`
@@ -128,18 +130,20 @@ sns:
 # Sidebar footer copyright info
 footer:
   # Set to false to hide.
-  copyright: '&copy; 2019 • <a href="">Edw4rd</a>'
-  
+  copyright: '&copy; 2021 • <a href="http://edw4rd.cn">Edw4rd</a>'
+
   # Set to false to hide Hexo link.
-  # powered: false
+  powered: false
 
   # Set to false to hide theme link.
-  # theme: false
+  theme: false
 
   # Custom text.
   # custom: Hosted by <a target="_blank" rel="external nofollow"
   #   href="https://pages.github.com/"><b>Github Pages</b></a>
-  custom: <span id="busuanzi_container_site_pv" style='display:none'>本站总访问量<i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>次</span></span> <br/> <span id="busuanzi_container_site_uv" style='display:none'>本站访客数<i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span>人次</span></span></span>
+  custom:
+    <a href="http://beian.miit.gov.cn/" target="_blank">渝ICP备19000092号-1</a><br/>
+    <span id="busuanzi_container_site_pv" style='display:none'>总访问量<i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>次</span></span> | <span id="busuanzi_container_site_uv" style='display:none'>访客数<i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span>人次</span></span></span>
 
 # ---------------------------------------------------------------
 # Content
@@ -152,7 +156,6 @@ page:
 
   # Display copyright notice, default to `false`
   copyright: true
-
 
 # Post
 post:
@@ -172,7 +175,7 @@ post:
   # 设置缩略图
   thumbnail: http://edw4rd.cn/assets/avatar.jpg
   # 设置缩略图底色
-  color: '#111'
+  color: "#111"
 # Archive
 archive:
   # per_page: 10
@@ -232,7 +235,6 @@ search:
   #     # Used to retrieve content from per hit
   #     content: _snippetResult.content.value
 
-
 # ---------------------------------------------------------------
 # Content addons
 # ---------------------------------------------------------------
@@ -241,7 +243,7 @@ search:
 # `![cat](images/cat.gif)` will convert to
 # <img src="https://cdn.example.com/images/cat.gif?m=webp&q=80" alt="cat">
 assets:
-  prefix: 'http://edw4rd.cn/assets'
+  prefix: "http://edw4rd.cn/assets"
   # suffix: '?m=webp&q=80'
 
 # Table of content, enabled by default, set to `false` to disable.
@@ -254,29 +256,29 @@ toc:
 
 # Reward
 # reward:
-  # Text which shows at the top.
-  # text: Buy me a cup of coffee ☕.
+# Text which shows at the top.
+# text: Buy me a cup of coffee ☕.
 
-  # Payment Methods
-  # qrcode, url and text must be set at least one
-  # wechat, alipay, paypal and bitcoin has a built-in icon,
-  # use `name` to apply
-  # methods:
-  #   - name: wechat
-  #     qrcode: http://edw4rd.cn/assets/wechat_pay.png
-  #     url: https://paypal.me/imelmore
-  #     text: This is a pay payment link for wechat
-  #     color: '#09bb07'
-  #   - name: alipay
-  #     qrcode: http://edw4rd.cn/assets/alipay.jpg
-  #     url: https://paypal.me/imelmore
-  #     text: This is a pay payment link for aplipay
-  #     color: '#09bb07'
-  #   - name: bitcoin
-  #     qrcode: http://edw4rd.cn/assets/wechat_pay.png
-  #     url: https://paypal.me/imelmore
-  #     text: This is a paypal payment link for bitcoin
-  #     color: '#09bb07'
+# Payment Methods
+# qrcode, url and text must be set at least one
+# wechat, alipay, paypal and bitcoin has a built-in icon,
+# use `name` to apply
+# methods:
+#   - name: wechat
+#     qrcode: http://edw4rd.cn/assets/wechat_pay.png
+#     url: https://paypal.me/imelmore
+#     text: This is a pay payment link for wechat
+#     color: '#09bb07'
+#   - name: alipay
+#     qrcode: http://edw4rd.cn/assets/alipay.jpg
+#     url: https://paypal.me/imelmore
+#     text: This is a pay payment link for aplipay
+#     color: '#01A1E9'
+#   - name: bitcoin
+#     qrcode: http://edw4rd.cn/assets/wechat_pay.png
+#     url: https://paypal.me/imelmore
+#     text: This is a paypal payment link for bitcoin
+#     color: '#397EBC'
 
 # Copyright notice
 # It is possible to use front matter `copyright` to override this setting.
@@ -304,7 +306,7 @@ copyright:
 # Built-in support Disqus (https://disqus.com) and LiveRe (https://livere.com),
 # for other comment system, see plugins
 comments:
-  disqus:
+  # disqus:
   #   shortname: disqus_shortname
   #   # Or you can set disqus script URL directly
   #   script: //disqus_shortname.disqus.com/embed.js
@@ -312,12 +314,11 @@ comments:
   #   autoload: false
 
   # livere:
-    # uid: livere_uid
+  # uid: livere_uid
   #   # LiveRe script, default to `https://cdn-city.livere.com/js/embed.dist.js`
-    # script:
+  # script:
   #   # Autoload, default to `true`, set to `false` to display a button
-    # autoload: true
-
+  # autoload: true
 
 # ---------------------------------------------------------------
 # Misc
@@ -399,41 +400,127 @@ pwa:
 
 # Plugins
 plugins:
-#   # Built-in plugins
-#   - cipher
+  #   # Built-in plugins
+  #   - cipher
   - cipher:
       placeholder: Passcode is required
       excerpt: Content encrypted
-#   - palette
-#   - position: sidebar
-#       template: |
-#         <is-palette palette="#673ab7,#3f51b5,#2196f3,#009688,#4caf50,#ff9800,#ff5722,#795548" col="4"></is-palette>
-# 加载脚本
+  #   - palette
+  #   - position: sidebar
+  #       template: |
+  #         <is-palette palette="#673ab7,#3f51b5,#2196f3,#009688,#4caf50,#ff9800,#ff5722,#795548" col="4"></is-palette>
+  # 加载脚本
   - palette
-
+  - custom.css
   # 插入到页面
   # palette="" 颜色列表
   # col="" 每行展示的个数
   - position: sidebar
     template: |
-      <button id="dark" style="position:relative;left:50%;transform:translateX(-50%)" onclick="toggle()">Dark</button>
-      <button id="light" style="position:relative;left:50%;transform:translateX(-50%)" onclick="toggle()">Light</button>
+      <div class="button">
+        <span class="a d" class="btn"><span class="b"><span class="c"></span></span></span>
+      </div>
       <script>
+       function addClass(el, className) {
+        if (hasClass(el, className)) {
+          return;
+        }
+        let newClass = el.className.split(" ");
+        newClass.push(className);
+        el.className = newClass.join(" ");
+      }
+
+      function hasClass(el, className) {
+        let reg = new RegExp("(^|\\s)" + className + "(\\s|$)");
+        return reg.test(el.className);
+      }
+      function removeClass(el, className) {
+        if (!hasClass(el, className)) {
+          return;
+        }
+        let newClass = el.className.split(" ");
+        newClass.forEach(function (val, index, newClass) {
+          if (val === className) {
+            newClass.splice(index, 1);
+          }
+        });
+        el.className = newClass.join(" ");
+      }
+      let dark = {
+                    "--inside-foreground-color": "#d8d8d8",
+                    "--inside-border-color": "#444",
+                    "--inside-background": "#202020",
+                    "--inside-card-background": "#252525",
+                    "--inside-highlight-00": "#252525",
+                    "--inside-highlight-01": "#444",
+                    "--inside-highlight-02": "#939393",
+                    "--inside-highlight-03": "#585858",
+                    "--inside-highlight-04": "#b8b8b8",
+                    "--inside-highlight-05": "#d8d8d8",
+                    "--inside-highlight-06": "#e8e8e8",
+                    "--inside-highlight-07": "#f8f8f8",
+                    "--inside-highlight-08": "#ab4642",
+                    "--inside-highlight-09": "#dc9656",
+                    "--inside-highlight-0a": "#f7ca88",
+                    "--inside-highlight-0b": "#a1b56c",
+                    "--inside-highlight-0c": "#b8b8b8",
+                    "--inside-highlight-0d": "#7cafc2",
+                    "--inside-highlight-0e": "#ba8baf",
+                    "--inside-highlight-0f": "#a16946",
+                    "--inside-card-color": "#252525"
+            };
+            let light = {
+                  "--inside-foreground-color": "#363636",
+                  "--inside-border-color": "#e0e0e0",
+                  "--inside-background": "#f3f6f7",
+                  "--inside-card-background": "#fff",
+                  "--inside-highlight-00": "#ffffff",
+                  "--inside-highlight-01": "#e0e0e0",
+                  "--inside-highlight-02": "#f3f6f7",
+                  "--inside-highlight-03": "#95a5b3",
+                  "--inside-highlight-04": "#363636",
+                  "--inside-highlight-05": "#262b2f",
+                  "--inside-highlight-06": "#000000",
+                  "--inside-highlight-07": "#000000",
+                  "--inside-highlight-08": "#5d6c7b",
+                  "--inside-highlight-09": "#40464a",
+                  "--inside-highlight-0a": "#2980b9",
+                  "--inside-highlight-0b": "#be516e",
+                  "--inside-highlight-0c": "#237dac",
+                  "--inside-highlight-0d": "#944770",
+                  "--inside-highlight-0e": "#239371",
+                  "--inside-highlight-0f": "#edf0f3",
+                  "--inside-card-color": "#fff"
+            }
       if (localStorage.getItem('theme') === 'dark') {
         document.documentElement.classList.add('dark')
+        setColors(dark)
       } else if (new Date().getHours() >= 21 || new Date().getHours() < 7) {
         document.documentElement.classList.add('dark')
+        setColors(dark)
       } else if (matchMedia('(prefers-color-scheme: dark)').matches) {
         document.documentElement.classList.add('dark')
+        setColors(dark)
+      }else{
+        setColors(light)
       }
-      function toggle(){ 
-        var isDark = document.documentElement.classList.toggle('dark');
-          if (isDark) {
-            localStorage.setItem('theme', 'dark');
-          } else {
-            localStorage.setItem('theme', 'light');
+      function setColors(obj){
+        Object.keys(obj).forEach(item => {
+          document.documentElement.style.setProperty(item,obj[item]);
+        })
+      }
+      let btn = document.querySelector(".a.d");
+      btn.onclick = () => {
+          if(hasClass(btn,'dark')){
+              removeClass(btn,'dark')
+              setColors(light)
+              localStorage.setItem('theme', 'light');
+          }else{
+              addClass(btn,'dark')
+              setColors(dark)
+              localStorage.setItem('theme', 'dark');
           }
-       }
+      };
       </script>
       <is-palette palette="#673ab7,#3f51b5,#2196f3,#009688,#4caf50,#ff9800,#ff5722,#795548,#607D8B,#2a2b33" col="5"></is-palette>
       <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -441,7 +528,7 @@ plugins:
 #   # Global Inject script/style
 #   # By default script will be injected into <body>, and style will be injected into <head>
 #   # In general, script or style depends on their ext name.
-#   - xxx.css
+# - custom.css
 #   - xxx.jss
 #   # Dynamic inject html snippet
 #   - position: # sidebar | post | page | comments | avatar | head_begin | head_end | body_begin | body_end
@@ -449,3 +536,26 @@ plugins:
 #     template: <script>...</script>
 #     # Or a path relative to theme folder
 #     template: snippets/snippet-1.html
+  - //imsun.github.io/gitment/style/default.css
+  - https://cdn.bootcdn.net/ajax/libs/gitment/0.0.3/gitment.browser.min.js
+  - position: comments
+    template: |
+      <div id="gitment"></div>
+      <script>
+        if (!window.__gitment) window.__gitment = new Gitment({
+          owner: 'dEdwardy',
+          repo: 'blog-hexo',
+          oauth: {
+            client_id: '7e69591ee93742a8f1dd',
+            client_secret: '59190dfbf9c7da1915d15cfb1e9b4b7dbae9b32c',
+          },
+        });
+        Object.assign(__gitment, {
+          id: decodeURIComponent(location.pathname),
+          title: document.title,
+          link: location.href,
+        });
+        __gitment.update();
+        __gitment.render('gitment');
+      </script>
+  
