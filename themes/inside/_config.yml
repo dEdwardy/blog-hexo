@@ -30,7 +30,7 @@ appearance:
     # Url of font css file
     # Below is a font set containing Baloo Bhaijaan, Josefin Sans, Montserrat and Inconsolata from Google Fonts.
     # url: //fonts.googleapis.com/css?family=Baloo+Bhaijaan|Inconsolata|Josefin+Sans|Montserrat
-    url: //cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.0/font.css
+    url: /lib/font-awesome/css/font-awesome.min.css
 
     # Base font which applied to body
     base: "'Josefin Sans', 'PingFang SC'"
@@ -94,7 +94,7 @@ profile:
   # You can set Avatar URL directly
   avatar: http://edw4rd.cn/assets/avatar.jpg
 
-  bio: Awesome guy.
+  bio: Live and learn.
 
 # Sidebar navigation links
 menu:
@@ -143,7 +143,7 @@ footer:
   #   href="https://pages.github.com/"><b>Github Pages</b></a>
   custom:
     <a href="http://beian.miit.gov.cn/" target="_blank">渝ICP备19000092号-1</a><br/>
-    <span id="busuanzi_container_site_pv" style='display:none'>总访问量<i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>次</span></span> | <span id="busuanzi_container_site_uv" style='display:none'>访客数<i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span>人次</span></span></span>
+    <span id="busuanzi_container_site_pv" style='display:none'><i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>次</span></span> | <span id="busuanzi_container_site_uv" style='display:none'><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span>人次</span></span></span>
 
 # ---------------------------------------------------------------
 # Content
@@ -255,30 +255,30 @@ toc:
   # index: true
 
 # Reward
-# reward:
-# Text which shows at the top.
-# text: Buy me a cup of coffee ☕.
+reward:
+  # Text which shows at the top.
+  text: Buy me a cup of coffee ☕.
 
-# Payment Methods
-# qrcode, url and text must be set at least one
-# wechat, alipay, paypal and bitcoin has a built-in icon,
-# use `name` to apply
-# methods:
-#   - name: wechat
-#     qrcode: http://edw4rd.cn/assets/wechat_pay.png
-#     url: https://paypal.me/imelmore
-#     text: This is a pay payment link for wechat
-#     color: '#09bb07'
-#   - name: alipay
-#     qrcode: http://edw4rd.cn/assets/alipay.jpg
-#     url: https://paypal.me/imelmore
-#     text: This is a pay payment link for aplipay
-#     color: '#01A1E9'
-#   - name: bitcoin
-#     qrcode: http://edw4rd.cn/assets/wechat_pay.png
-#     url: https://paypal.me/imelmore
-#     text: This is a paypal payment link for bitcoin
-#     color: '#397EBC'
+  # Payment Methods
+  # qrcode, url and text must be set at least one
+  # wechat, alipay, paypal and bitcoin has a built-in icon,
+  # use `name` to apply
+  methods:
+    - name: wechat
+      qrcode: http://edw4rd.cn/assets/wechat_pay.png
+      # url: https://paypal.me/imelmore
+      text: This is a pay payment for wechat
+      color: '#09bb07'
+    - name: alipay
+      qrcode: http://edw4rd.cn/assets/alipay.jpg
+      # url: https://paypal.me/imelmore
+      text: This is a pay payment for aplipay
+      color: '#01A1E9'
+    # - name: bitcoin
+    #   qrcode: http://edw4rd.cn/assets/wechat_pay.png
+    #   url: https://paypal.me/imelmore
+    #   text: This is a paypal payment link for bitcoin
+    #   color: '#397EBC'
 
 # Copyright notice
 # It is possible to use front matter `copyright` to override this setting.
@@ -402,6 +402,7 @@ pwa:
 plugins:
   #   # Built-in plugins
   #   - cipher
+  # - //netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css
   - cipher:
       placeholder: Passcode is required
       excerpt: Content encrypted
@@ -499,16 +500,20 @@ plugins:
                   "--inside-highlight-0f": "#edf0f3",
                   "--inside-card-color": "#fff"
             }
-      if (localStorage.getItem('theme') === 'dark') {
-        document.documentElement.classList.add('dark')
-        setColors(dark)
-      } else if (new Date().getHours() >= 21 || new Date().getHours() < 7) {
-        document.documentElement.classList.add('dark')
-        setColors(dark)
-      } else if (matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.documentElement.classList.add('dark')
+            let isDark = ()=> {
+              if (localStorage.getItem('theme') === 'dark') {
+                return true
+              }  else if (matchMedia('(prefers-color-scheme: dark)').matches) {
+                return true
+              }else{
+                return false
+              }
+            }
+      if(isDark() || new Date().getHours() >= 21 || new Date().getHours() < 7){
+        console.log('dark')
         setColors(dark)
       }else{
+        console.log('light')
         setColors(light)
       }
       function setColors(obj){
@@ -518,7 +523,7 @@ plugins:
       }
       let btn = document.querySelector(".a.d");
       btn.onclick = () => {
-          if(hasClass(btn,'dark')){
+          if(isDark()){
               removeClass(btn,'dark')
               setColors(light)
               localStorage.setItem('theme', 'light');
@@ -543,25 +548,37 @@ plugins:
   #     template: <script>...</script>
   #     # Or a path relative to theme folder
   #     template: snippets/snippet-1.html
-  - //imsun.github.io/gitment/style/default.css
-  - https://cdn.bootcdn.net/ajax/libs/gitment/0.0.3/gitment.browser.min.js
-  - position: comments
+  # - https://billts.site/extra_css/gitment.css
+  # - https://billts.site/js/gitment.js
+  # - position: comments
+  #   template: |
+  #     <div id="gitment"></div>
+  #     <script>
+  #       if (!window.__gitment) window.__gitment = new Gitment({
+  #         owner: 'dEdwardy',
+  #         repo: 'blog-hexo',
+  #         oauth: {
+  #           client_id: '7e69591ee93742a8f1dd',
+  #           client_secret: '59190dfbf9c7da1915d15cfb1e9b4b7dbae9b32c',
+  #         },
+  #       });
+  #       Object.assign(__gitment, {
+  #         id: decodeURIComponent(location.pathname),
+  #         title: document.title,
+  #         link: location.href,
+  #       });
+  #       __gitment.update();
+  #       __gitment.render('gitment');
+  #     </script>
+  # jQery
+  # - //cdn.bootcdn.net/ajax/libs/jquery/3.2.1/jquery.min.js
+
+  # Font Awesome
+  # - //netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css
+  - lib/font-awesome/css/font-awesome.min.css
+  # 代码复制
+  - position: [post, page]
     template: |
-      <div id="gitment"></div>
-      <script>
-        if (!window.__gitment) window.__gitment = new Gitment({
-          owner: 'dEdwardy',
-          repo: 'blog-hexo',
-          oauth: {
-            client_id: '7e69591ee93742a8f1dd',
-            client_secret: '59190dfbf9c7da1915d15cfb1e9b4b7dbae9b32c',
-          },
-        });
-        Object.assign(__gitment, {
-          id: decodeURIComponent(location.pathname),
-          title: document.title,
-          link: location.href,
-        });
-        __gitment.update();
-        __gitment.render('gitment');
-      </script>
+      <script type="text/javascript" src="//cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js"></script>
+      <script type="text/javascript" src="//cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.0/clipboard-use.js"></script>
+      <link href="//cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.1/clipboard.css" rel="stylesheet">

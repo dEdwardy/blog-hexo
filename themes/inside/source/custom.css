@@ -80,6 +80,7 @@
   border-radius: 50%;
 }
 .dark .c {
+  transition: all 0.3s cubic-bezier(0.4, 0.03, 0, 1);
   transform: translateX(18px);
 }
 .dark .a .b::after {
