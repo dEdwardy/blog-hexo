@@ -1,0 +1,36 @@
+/* dark */
+.dark body{
+  background-color: #202020;
+  color: #d8d8d8;
+}
+.dark body .φco a{
+  color:var(--inside-foreground-color);
+}
+.dark body footer.φcl, .dark body .φco a{
+  color:var(--inside-foreground-color);
+  background-color: #202020;
+}
+.dark .φcl{
+  background:var(--inside-card-background)
+}
+.dark body #dark{
+  display: block;
+}
+.dark body #light{
+  display: none;
+}
+.dark body p{
+  color:inherit;
+}
+
+
+/* light */
+body #dark{
+  display: none;
+}
+ body #light{
+  display: block;
+}
+body p{
+  color:inherit;
+}

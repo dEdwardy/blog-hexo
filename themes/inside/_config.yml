@@ -11,11 +11,12 @@ appearance:
   # Border color, default '#e0e0e0'
   border_color:
   # body background, default '#f5f7fa'
-  background: http://edw4rd.cn/assets/bg.png
+  # background: http://edw4rd.cn/assets/bg.png
+  # background: rgba(0,0,0,0.3)
   # Sidebar background (when opened), default to accent_color
   sidebar_background:
   # Card background, default '#fff'
-  card_background:
+  card_background: '#fff'
 
   # All background settings above support image, e.g.,
   # '//www.toptal.com/designers/subtlepatterns/patterns/confectionary.png #f5f7fa' or
@@ -138,7 +139,8 @@ footer:
   # Custom text.
   # custom: Hosted by <a target="_blank" rel="external nofollow"
   #   href="https://pages.github.com/"><b>Github Pages</b></a>
-  custom: <span id="busuanzi_container_site_pv" style='display:none'><i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span> ｜ <span id="busuanzi_container_site_uv" style='display:none'><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span></span>
+  custom: <span id="busuanzi_container_site_pv" style='display:none'>本站总访问量<i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>次</span></span> <br/> <span id="busuanzi_container_site_uv" style='display:none'>本站访客数<i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span>人次</span></span></span>
+
 # ---------------------------------------------------------------
 # Content
 # ---------------------------------------------------------------
@@ -414,6 +416,25 @@ plugins:
   # col="" 每行展示的个数
   - position: sidebar
     template: |
+      <button id="dark" style="position:relative;left:50%;transform:translateX(-50%)" onclick="toggle()">Dark</button>
+      <button id="light" style="position:relative;left:50%;transform:translateX(-50%)" onclick="toggle()">Light</button>
+      <script>
+      if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.classList.add('dark')
+      } else if (new Date().getHours() >= 21 || new Date().getHours() < 7) {
+        document.documentElement.classList.add('dark')
+      } else if (matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.classList.add('dark')
+      }
+      function toggle(){ 
+        var isDark = document.documentElement.classList.toggle('dark');
+          if (isDark) {
+            localStorage.setItem('theme', 'dark');
+          } else {
+            localStorage.setItem('theme', 'light');
+          }
+       }
+      </script>
       <is-palette palette="#673ab7,#3f51b5,#2196f3,#009688,#4caf50,#ff9800,#ff5722,#795548,#607D8B,#2a2b33" col="5"></is-palette>
       <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
