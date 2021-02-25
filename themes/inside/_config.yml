@@ -590,7 +590,7 @@ plugins:
       <script>
         new Valine({
           el: '#vcomment',
-          lang: 'en',
+          lang: 'zh-cn',
           admin_email: 'edw4rd6731@qq.com',
           appId: 'pIghTsHqq8mdbOv6fqBK3mDx-gzGzoHsz',
           appKey: 'E7RJhaoeH72yYVhgdf3tDb9E',
