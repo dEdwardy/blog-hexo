@@ -99,3 +99,7 @@
 .fancybox-active{
   height:100% !important;
 }
+/* fix 详情页 输入框遮挡住右侧展开栏 */
+.φbc{
+  z-index:11 !important;
+}
