@@ -249,10 +249,10 @@ assets:
 # Table of content, enabled by default, set to `false` to disable.
 toc:
   # The depth of toc, default to `3`, maximum to `4`.
-  # depth: 3
+  depth: 3
 
   # Showing index before title, eg. 1.1 title, default to `true`
-  # index: true
+  index: true
 
 # Reward
 reward:
@@ -414,7 +414,7 @@ plugins:
       <div class="button">
         <span class="a d" class="btn"><span class="b"><span class="c"></span></span></span>
       </div>
-      <script>
+      <script defer>
        var _hmt = _hmt || [];
       (function() {
         var hm = document.createElement("script");
@@ -505,9 +505,10 @@ plugins:
       if(isDark() || new Date().getHours() >= 21 || new Date().getHours() < 7){
         console.log('dark')
         setColors(dark)
+        localStorage.setItem('theme', 'dark');
       }else{
-        console.log('light')
         setColors(light)
+        localStorage.setItem('theme', 'light');
       }
       function setColors(obj){
         Object.keys(obj).forEach(item => {
@@ -516,13 +517,15 @@ plugins:
       }
       let btn = document.querySelector(".a.d");
       btn.onclick = () => {
-          if(isDark()){
-              removeClass(btn,'dark')
+          let flag = isDark()
+          console.log('click',flag)
+          if(flag){
               setColors(light)
+              removeClass(btn,'dark')
               localStorage.setItem('theme', 'light');
           }else{
-              addClass(btn,'dark')
               setColors(dark)
+              addClass(btn,'dark')
               localStorage.setItem('theme', 'dark');
           }
       };
@@ -551,9 +554,9 @@ plugins:
   # 代码复制
   - position: [post, page]
     template: |
-      <script type="text/javascript" src="//cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js"></script>
-      <script type="text/javascript" src="//cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.0/clipboard-use.js"></script>
-      <link href="//cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.1/clipboard.css" rel="stylesheet">
+      <script defer type="text/javascript" src="//cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js"></script>
+      <script defer type="text/javascript" src="//cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.0/clipboard-use.js"></script>
+      <link rel="preload"  href="//cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.1/clipboard.css">
   # inside 主题没有引入 jQuery 框架，需要手动引入
   - //cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.7/av-min.js
   # 引用本地 source/lib 路径下的 valine.js 文件
@@ -563,7 +566,7 @@ plugins:
   - position: comments
     template: |
       <div id="vcomment"></div>
-      <script>
+      <script defer>
         new Valine({
           el: '#vcomment',
           lang: 'zh-cn',
