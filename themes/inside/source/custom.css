@@ -95,3 +95,7 @@
   box-shadow: inset 0 0 0 3px var(--inside-accent-color);
   background-color: var(--inside-accent-color);
 }
+/* fix fancy-box 预览图片后滚动条回到顶部 */
+.fancybox-active{
+  height:100% !important;
+}
