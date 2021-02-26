@@ -415,13 +415,6 @@ plugins:
         <span class="a d" class="btn"><span class="b"><span class="c"></span></span></span>
       </div>
       <script defer="defer">
-       var _hmt = _hmt || [];
-      (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?fc9745b2b6ea98cb8d9c9c537608b7cf";
-        var s = document.getElementsByTagName("script")[0]; 
-        s.parentNode.insertBefore(hm, s);
-      })();
        function addClass(el, className) {
         if (hasClass(el, className)) {
           return;
