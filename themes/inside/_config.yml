@@ -160,6 +160,7 @@ page:
 # Post
 post:
   per_page: 5
+  update: true
   # reading_time: false
   # reading_time:
   #   wpm: 150
@@ -297,7 +298,7 @@ copyright:
   # published: false
 
   # Display updated date, default to `false`
-  # updated: false
+  updated: true
 
   # Custom text, override above settings
   # custom: my copyright
