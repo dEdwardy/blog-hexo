@@ -149,6 +149,6 @@ fs.readFile(__filename, () => {
 
 ### 参考链接
 
-#### [https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/EventLoop]([https://](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/EventLoop))
+#### [https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/EventLoop](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/EventLoop)
 
 #### [https://nodejs.org/zh-cn/docs/guides/event-loop-timers-and-nexttick/](https://nodejs.org/zh-cn/docs/guides/event-loop-timers-and-nexttick/)
